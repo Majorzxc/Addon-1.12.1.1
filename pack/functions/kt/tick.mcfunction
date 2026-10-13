@@ -6,8 +6,11 @@ scoreboard objectives add kt_light dummy
 scoreboard objectives add kt_busy dummy
 scoreboard objectives add kt_lv dummy
 scoreboard objectives add kt_dbg dummy
-title @s[scores={kt_dbg=1,kt_sneak=1}] actionbar §aKT: шифт есть
-title @s[scores={kt_dbg=1,kt_sneak=0}] actionbar §7KT: работает, шифта нет
+scoreboard players add @s kt_light 0
+title @s[scores={kt_dbg=1,kt_sneak=1,kt_light=0}] actionbar §aKT: шифт есть
+title @s[scores={kt_dbg=1,kt_sneak=0,kt_light=0}] actionbar §7KT: работает, шифта нет
+title @s[scores={kt_dbg=1,kt_sneak=1,kt_light=1}] actionbar §aKT: шифт есть §e| факел: свет вкл
+title @s[scores={kt_dbg=1,kt_sneak=0,kt_light=1}] actionbar §7KT: шифта нет §e| факел: свет вкл
 scoreboard players add @e[type=item] kt_age 1
 execute @s[scores={kt_sneak=1}] ~ ~ ~ execute @e[type=item,r=8,c=2,scores={kt_age=1..3}] ~ ~ ~ function kt/trig/item
 effect @s[scores={kt_light=1}] night_vision 12 0 true
