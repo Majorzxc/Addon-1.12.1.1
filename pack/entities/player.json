@@ -10,7 +10,6 @@
         "kt_tick": "controller.animation.kt.tick",
         "kt_sneak": "controller.animation.kt.sneak",
         "kt_light": "controller.animation.kt.light",
-        "kt_offhand": "controller.animation.kt.offhand",
         "kt_init": "controller.animation.kt.init"
       },
       "scripts": {
@@ -18,7 +17,6 @@
           "kt_tick",
           "kt_sneak",
           "kt_light",
-          "kt_offhand",
           "kt_init"
         ]
       }
@@ -63,6 +61,17 @@
       "kt:light": {
         "minecraft:mark_variant": {
           "value": 1
+        },
+        "minecraft:timer": {
+          "time": [
+            1.0,
+            1.0
+          ],
+          "looping": false,
+          "time_down_event": {
+            "event": "kt:light_off",
+            "target": "self"
+          }
         }
       }
     },
@@ -206,27 +215,6 @@
               ]
             },
             "event": "kt:light_on"
-          },
-          {
-            "filters": {
-              "all_of": [
-                {
-                  "test": "has_equipment",
-                  "subject": "self",
-                  "domain": "any",
-                  "operator": "not",
-                  "value": "torch"
-                },
-                {
-                  "test": "has_equipment",
-                  "subject": "self",
-                  "domain": "any",
-                  "operator": "not",
-                  "value": "lantern"
-                }
-              ]
-            },
-            "event": "kt:light_off"
           }
         ]
       }

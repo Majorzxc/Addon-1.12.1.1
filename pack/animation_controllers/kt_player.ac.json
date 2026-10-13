@@ -93,33 +93,11 @@
         },
         "off": {
           "on_entry": [
-            "/scoreboard players set @s kt_light 0",
-            "/effect @s night_vision 0 0 true"
+            "/scoreboard players set @s kt_light 0"
           ],
           "transitions": [
             {
               "on": "query.mark_variant == 1"
-            }
-          ]
-        }
-      }
-    },
-    "controller.animation.kt.offhand": {
-      "states": {
-        "default": {
-          "transitions": [
-            {
-              "go": "query.is_sneaking && query.mark_variant == 1 && query.head_x_rotation < -60"
-            }
-          ]
-        },
-        "go": {
-          "on_entry": [
-            "/function kt/offhand"
-          ],
-          "transitions": [
-            {
-              "default": "!query.is_sneaking"
             }
           ]
         }
