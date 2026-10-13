@@ -1,0 +1,29 @@
+{
+  "format_version": 1,
+  "header": {
+    "name": "Рубка, жилы и факел",
+    "description": "§ev1.0.7§r · Рубка деревьев и жилы руды на шифте, ночное зрение с факелом в руке. Для Bedrock 1.12",
+    "uuid": "8d2c0a00-d4f9-4fc4-b3a3-36265c39bfe5",
+    "version": [
+      1,
+      0,
+      7
+    ],
+    "min_engine_version": [
+      1,
+      12,
+      0
+    ]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "3f0c7a52-6b1e-4d8a-9c5e-2a7d4b8e1f60",
+      "version": [
+        1,
+        0,
+        7
+      ]
+    }
+  ]
+}
