@@ -2,12 +2,12 @@
   "format_version": 1,
   "header": {
     "name": "Рубка, жилы и факел",
-    "description": "§ev1.0.4§r · Рубка деревьев и жилы руды на шифте, факел в руке. Для Bedrock 1.12",
+    "description": "§ev1.0.5§r · Рубка деревьев и жилы руды на шифте, факел в руке. Для Bedrock 1.12",
     "uuid": "8d2c0a00-d4f9-4fc4-b3a3-36265c39bfe5",
     "version": [
       1,
       0,
-      4
+      5
     ],
     "min_engine_version": [
       1,
@@ -22,7 +22,7 @@
       "version": [
         1,
         0,
-        4
+        5
       ]
     }
   ]
