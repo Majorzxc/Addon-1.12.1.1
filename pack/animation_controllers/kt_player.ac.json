@@ -1,0 +1,138 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.kt.tick": {
+      "states": {
+        "default": {
+          "on_entry": [
+            "/function kt/tick",
+            "/execute @s[scores={kt_busy=1}] ~ ~ ~ function kt/pass",
+            "/execute @s[scores={kt_busy=1}] ~ ~ ~ function kt/pass",
+            "/execute @s[scores={kt_busy=1}] ~ ~ ~ function kt/pass",
+            "/execute @s[scores={kt_busy=1}] ~ ~ ~ function kt/pass",
+            "/execute @s[scores={kt_busy=1}] ~ ~ ~ function kt/pass",
+            "/execute @s[scores={kt_busy=1}] ~ ~ ~ function kt/pass",
+            "/execute @s[scores={kt_busy=1}] ~ ~ ~ function kt/pass",
+            "/execute @s[scores={kt_busy=1}] ~ ~ ~ function kt/pass"
+          ],
+          "transitions": [
+            {
+              "b": "1.0"
+            }
+          ]
+        },
+        "b": {
+          "on_entry": [
+            "/function kt/tick",
+            "/execute @s[scores={kt_busy=1}] ~ ~ ~ function kt/pass",
+            "/execute @s[scores={kt_busy=1}] ~ ~ ~ function kt/pass",
+            "/execute @s[scores={kt_busy=1}] ~ ~ ~ function kt/pass",
+            "/execute @s[scores={kt_busy=1}] ~ ~ ~ function kt/pass",
+            "/execute @s[scores={kt_busy=1}] ~ ~ ~ function kt/pass",
+            "/execute @s[scores={kt_busy=1}] ~ ~ ~ function kt/pass",
+            "/execute @s[scores={kt_busy=1}] ~ ~ ~ function kt/pass",
+            "/execute @s[scores={kt_busy=1}] ~ ~ ~ function kt/pass"
+          ],
+          "transitions": [
+            {
+              "default": "1.0"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.kt.sneak": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "on": "query.is_sneaking"
+            }
+          ]
+        },
+        "on": {
+          "on_entry": [
+            "/scoreboard players set @s kt_sneak 1"
+          ],
+          "transitions": [
+            {
+              "off": "!query.is_sneaking"
+            }
+          ]
+        },
+        "off": {
+          "on_entry": [
+            "/scoreboard players set @s kt_sneak 0"
+          ],
+          "transitions": [
+            {
+              "on": "query.is_sneaking"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.kt.light": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "on": "query.mark_variant == 1"
+            }
+          ]
+        },
+        "on": {
+          "on_entry": [
+            "/scoreboard players set @s kt_light 1"
+          ],
+          "transitions": [
+            {
+              "off": "query.mark_variant != 1"
+            }
+          ]
+        },
+        "off": {
+          "on_entry": [
+            "/scoreboard players set @s kt_light 0",
+            "/effect @s night_vision 0 0 true"
+          ],
+          "transitions": [
+            {
+              "on": "query.mark_variant == 1"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.kt.offhand": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "go": "query.is_sneaking && query.mark_variant == 1 && query.head_x_rotation < -60"
+            }
+          ]
+        },
+        "go": {
+          "on_entry": [
+            "/function kt/offhand"
+          ],
+          "transitions": [
+            {
+              "default": "!query.is_sneaking"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.kt.init": {
+      "states": {
+        "default": {
+          "on_entry": [
+            "/function kt/init"
+          ]
+        }
+      }
+    }
+  }
+}
