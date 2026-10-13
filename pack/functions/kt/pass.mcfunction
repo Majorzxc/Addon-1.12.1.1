@@ -1,6 +1,11 @@
-execute @e[family=kt_node,c=1] ~ ~ ~ execute @a[scores={kt_dbg=1},c=1] ~ ~ ~ say KT: волна рубки идёт
-scoreboard players add @e[family=kt_node] kt_n 1
-execute @e[family=kt_node,scores={kt_n=1}] ~ ~ ~ function kt/dedupe
+scoreboard players add @e[type=kt:log_node] kt_n 1
+scoreboard players add @e[type=kt:leaf_1] kt_n 1
+scoreboard players add @e[type=kt:leaf_2] kt_n 1
+scoreboard players add @e[type=kt:leaf_3] kt_n 1
+scoreboard players add @e[type=kt:leaf_4] kt_n 1
+scoreboard players add @e[type=kt:ore_node] kt_n 1
+execute @e[scores={kt_n=1..},c=1] ~ ~ ~ execute @a[scores={kt_dbg=1},c=1] ~ ~ ~ say KT: волна рубки идёт
+execute @e[scores={kt_n=1}] ~ ~ ~ function kt/dedupe
 execute @e[type=kt:log_node,scores={kt_n=2}] ~ ~ ~ detect ~ ~ ~ log -1 function kt/n/log
 execute @e[type=kt:log_node,scores={kt_n=2}] ~ ~ ~ detect ~ ~ ~ log2 -1 function kt/n/log
 execute @e[type=kt:leaf_1,scores={kt_n=2}] ~ ~ ~ detect ~ ~ ~ leaves -1 function kt/n/leaf_1
@@ -20,4 +25,9 @@ execute @e[type=kt:ore_node,scores={kt_n=2}] ~ ~ ~ detect ~ ~ ~ redstone_ore -1 
 execute @e[type=kt:ore_node,scores={kt_n=2}] ~ ~ ~ detect ~ ~ ~ lit_redstone_ore -1 function kt/n/ore_redstone
 execute @e[type=kt:ore_node,scores={kt_n=2}] ~ ~ ~ detect ~ ~ ~ emerald_ore -1 function kt/n/ore_emerald
 execute @e[type=kt:ore_node,scores={kt_n=2}] ~ ~ ~ detect ~ ~ ~ quartz_ore -1 function kt/n/ore_quartz
-kill @e[family=kt_node,scores={kt_n=2..}]
+kill @e[type=kt:log_node,scores={kt_n=2..}]
+kill @e[type=kt:leaf_1,scores={kt_n=2..}]
+kill @e[type=kt:leaf_2,scores={kt_n=2..}]
+kill @e[type=kt:leaf_3,scores={kt_n=2..}]
+kill @e[type=kt:leaf_4,scores={kt_n=2..}]
+kill @e[type=kt:ore_node,scores={kt_n=2..}]

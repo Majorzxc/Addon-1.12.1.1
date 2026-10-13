@@ -11,4 +11,9 @@ scoreboard players add @e[type=item] kt_age 1
 execute @s[scores={kt_sneak=1}] ~ ~ ~ execute @e[type=item,r=8,c=2,scores={kt_age=1..3}] ~ ~ ~ function kt/trig/item
 effect @s[scores={kt_light=1}] night_vision 15 0 true
 scoreboard players set @s kt_busy 0
-execute @e[family=kt_node,c=1] ~ ~ ~ scoreboard players set @a kt_busy 1
+execute @e[type=kt:log_node,c=1] ~ ~ ~ scoreboard players set @a kt_busy 1
+execute @e[type=kt:leaf_1,c=1] ~ ~ ~ scoreboard players set @a kt_busy 1
+execute @e[type=kt:leaf_2,c=1] ~ ~ ~ scoreboard players set @a kt_busy 1
+execute @e[type=kt:leaf_3,c=1] ~ ~ ~ scoreboard players set @a kt_busy 1
+execute @e[type=kt:leaf_4,c=1] ~ ~ ~ scoreboard players set @a kt_busy 1
+execute @e[type=kt:ore_node,c=1] ~ ~ ~ scoreboard players set @a kt_busy 1
